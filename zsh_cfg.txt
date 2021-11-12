@@ -1,0 +1,30 @@
+------------------------------------------------------------------------------------------------------------------------------
+************************************* Configure Zsh ***************************************
+------------------------------------------------------------------------------------------------------------------------------
+
+# Install packet
+zsh
+
+# Change Shell
+chsh -s /bin/zsh [user]
+doas chsh -s /bin/zsh root
+
+# install oh-my-zsh
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+source ~/.zshrc
+
+# enable plugins of oh-my-zsh
+
+nano ~/.zshrc
+
+## Go to the 'plugins' line 73 and add some plugins that you want to enable inside the bracket (). For example, here's the change I made in my case: ##
+plugins=(git extract web-search yum git-extras docker vagrant)
+
+# Install powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+
+
+
+
